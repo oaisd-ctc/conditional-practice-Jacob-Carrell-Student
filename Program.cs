@@ -5,6 +5,7 @@ public class Program
 {
 
     public static string numb;
+
     public static int number;
 
     public static string numb1;
@@ -20,14 +21,17 @@ public class Program
     public static string numbDay;
 
     public static int numberDay;
+
     public static void Main(string[] args)
     {
         FahrenheitToCelsius(69); // Test FahrenheitToCelsius Function with a random value
         // Test your functions by calling them below:
-        CheckForPositiveNegativeZero(); 
+        CheckForPositiveNegativeZero();
+        FindMinimum();
+        FindMaximum(); 
         IsDivisibleBy5();
         CheckEvenOrOdd();
-        // CheckVowelOrConsonant();
+        CheckVowelOrConsonant();
         DisplayDayOfWeek();
 
     }
@@ -48,11 +52,43 @@ public class Program
 
         if (number < 0) {
             Console.WriteLine("Your number is negative");
-        } else if (number > -1 && number1 < 1) {
+        } else if (number == 0) {
             Console.WriteLine("Your number is zero");
         } else if (number > 0) {
             Console.WriteLine("Your number is positive");
         }
+    }
+
+    public static void FindMinimum()
+    {
+        int num1 = 45;
+        int num2 = 15;
+        int num3 = 50;
+
+        if (num1 <= num2 && num1 <= num3) 
+            Console.WriteLine("The minimum value is " + num1); 
+ 
+        else if (num2 <= num1 && num2 <= num3) 
+            Console.WriteLine("The minimum value is " + num2); 
+ 
+        else
+            Console.WriteLine("The minimum value is " + num3);
+    }
+
+    public static void FindMaximum()
+    {
+        int num1 = 45;
+        int num2 = 15;
+        int num3 = 50;
+
+        if (num1 >= num2 && num1 >= num3) 
+            Console.WriteLine("The maximum value is " + num1); 
+ 
+        else if (num2 >= num1 && num2 >= num3) 
+            Console.WriteLine("The maximum value is " + num2); 
+ 
+        else
+            Console.WriteLine("The maximum value is " + num3);
     }
 
     public static void IsDivisibleBy5()
@@ -81,16 +117,21 @@ public class Program
         }
     }
 
-    // public static void CheckVowelOrConsonant()
-    // {
-        // Console.WriteLine("Please give a random letter");
-        // letter = Console.ReadLine();
+    public static void CheckVowelOrConsonant()
+    {
+        Console.WriteLine("Please input a random lowercase letter");
+        letter = Console.ReadLine();
 
-        // switch (letter)
-        // {
-            // if (letter = "A")
-        // }
-    // }   
+        if (letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u" ) {
+            Console.WriteLine(letter + " is a vowel");
+        } else if (letter == "y") {
+            Console.WriteLine("Uhh... That's a tricky one...");
+        } else {
+            Console.WriteLine(letter + " is a consonant");
+        }
+
+    }
+   
 
         public static void DisplayDayOfWeek()
         {
